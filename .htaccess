@@ -1,0 +1,12 @@
+#Change DefaultType to AddType while working with localhost
+options +MultiViews
+DefaultType  application/x-httpd-php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+Options -Indexes
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.html

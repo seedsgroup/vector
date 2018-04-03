@@ -1,0 +1,1 @@
+$(document).ready(function(){$('.your-class').slick({arrows:true,dots:true,autoplay:true, autoplaySpeed:3000, pauseOnHover:true,touchMove:true,infinite:true,});});

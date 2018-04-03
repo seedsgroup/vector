@@ -1,0 +1,925 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+$fontweight: 800;
+$smallfonts: 1.5em;
+$h1fontsize: 4em;
+$bgColor: #f6f6f6;
+$navColor: #252b34; //blackish color for menu
+$newNavColor: rgba(33,47,61, 0.92);
+$navBorderColor: #17202A;
+$fontFamily: 'Source Sans Pro', sans-serif;
+$wMargin: 0em 8em 0em 8em;
+$wColor: white;
+$navHeight: 40px;
+$margin: ($navHeight+20) 8em 0em 8em;
+$pageShadow: 0px -1px 10px 5px darkgrey;
+$facebook: #3B5998; 
+$google: red; 
+$linkedin: #0077B5;
+$font: 'Source Sans Pro', sans-serif;
+$navColorHover: #82B440;
+$navColorBefore: white;
+$navColorAfter: green;
+$marginMenuA: 0 7.5% 0 6.6%;
+$marginMenuB: 0 11.5% 0 9.7%;
+$smPadding: 4em;
+$topIconsColor: #848484; 
+$width: 82%;
+$eyeColor: red;
+// Mixins defined
+  @mixin brandstyle{
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  @mixin topMenu{
+    color: $topIconsColor !important;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    font-family: $font;
+    text-transform: uppercase;
+  }
+  @mixin contentStyle{
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    font-family: $font;
+    font-weight: 300;
+    font-size: 18px;
+  }
+
+  @mixin aStyle{
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  @mixin jumbotronHeaderStyle{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    letter-spacing: -1px;
+    font-size: 4em;
+    text-align: center;
+  }
+
+  @mixin pageStyle{
+    background-color: $wColor;
+    box-shadow: $pageShadow;
+    transition: linear 0.5s;
+    margin: $margin;
+  }
+
+  @mixin pic{
+    background-size: cover;
+    background-position: center;
+    height: 600px !important;
+  }
+
+  @mixin arrowHover{ //this is hover effect of arrow that are in carousel
+    z-index: 1000;
+    &:before{
+      font-size: 30px !important;
+    }
+    &:hover{
+          &:before{
+            color: $navColorHover !important;
+            transition: 0.2s all linear;
+          }
+        }
+  }
+// Mixins ends here
+
+//body color
+body{
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #f6f6f6 !important;
+}
+
+div.container-fluid.contact{
+  box-shadow: 2px 17px 9px 0px darkgrey;
+  transition: linear 0.5s;
+  margin: $wMargin;
+}
+
+div#six{
+  padding-top: 0 !important;
+}
+
+//topbar
+nav{
+  font-size: 1em;
+  margin-bottom: 0 !important;
+  height: $navHeight;
+  border: none;
+  opacity: 0.9;
+  padding: 0 !important;
+  div#topbar{
+    width: $width !important;
+    margin: 0 auto;
+    padding: 0 !important;
+    height: ($navHeight/1.6) !important;
+    table{
+      width: 100% !important;
+      height: 100% !important;
+      background-color: #f7f7f7 !important;
+      margin: 0 !important;
+      border: none;
+      tr{
+        width: 100% !important;
+        height: 100% !important;
+        background-color: inherit !important;
+        border: none !important;
+        td{
+          width: 50% !important;
+          height: 100% !important;
+          background-color: inherit;
+          border: none !important;
+          vertical-align: middle !important;
+          ul{
+            width: 100% !important;
+            height: unset !important;
+            &.detail{
+              background-color: inherit;
+              border: none !important;
+              li{
+                background-color: inherit;
+                border: none !important;
+                display: inline !important;
+                @include topMenu;
+                &:first-child{
+                  padding-right: 2% !important;
+                }
+              }
+            } //detail ends here
+            &.social_links{
+              background-color: inherit;
+              border: none !important;
+              li{
+                display: inline !important;
+                @include topMenu;
+                float: right;
+                padding-right: 2%;
+                a{
+                  @include aStyle;
+                  color: $topIconsColor !important;
+                  &.fa-icons1{
+                    svg:hover{
+                      color: $facebook !important;
+                    }
+                  }
+                  &.fa-icons2{
+                    svg:hover{
+                      color: $google !important;
+                    }
+                  }
+                  &.fa-icons3{
+                    svg:hover{
+                      color: $linkedin !important;
+                    }
+                  }
+                }
+              }
+            } //social link ends here
+          }
+          
+        } //td ends here
+      } //tr ends here
+    } //table ends here 
+  }
+  div#mainnav{
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: $navHeight;
+    background-color: $navColor;
+    opacity: 0.9;
+    @include aStyle;
+    table{
+      width: $width !important;
+      height: $navHeight !important;
+      border: none;
+      margin: 0 auto;
+      tr{
+        width: 100% !important;
+        height: 100% !important;
+        border: none;
+        td{
+          vertical-align: middle !important;
+          border: none;
+          ul.nav-pills{
+            li{
+              text-transform: uppercase !important;
+              font-weight: bolder;
+              letter-spacing: 0.2em;
+              float: right;
+              background-color: $navColor !important;
+              a{
+                //background-color: unset !important;
+                color: white;
+                &:hover{
+                    color: $navColor;
+                    border-radius: 0 !important;
+                  }
+              }
+              &.active{
+                a{
+                  background-color: $navColorHover;
+                  border-radius: 0 !important;
+                  &:hover{
+                    color: white;
+                  }
+                }
+              }
+              &.dropdown{
+                a.dropdown-toggle{
+                  background-color: unset !important;
+                  &:hover{
+                    background-color: #eeeeee !important;
+                  }
+                }
+                ul.dropdown-menu{
+                  //display: none;
+                  li{
+                    float: unset !important;
+                    color: white;      
+                  }
+                  &:hover{
+                    display: unset !important;
+                  }
+                }
+                &:hover{
+                  display: block !important;
+                  color: white !important;
+                }
+              }
+            }
+          }
+          h1.vgpl-brand {
+                  @include brandstyle;
+          }
+          &:first-child{
+            width: 30% !important;
+            background-color: $navColor !important;
+          }
+          &:last-child{
+            width: 70% !important;
+            background-color: $navColor !important;
+          }
+        }
+      }
+    }
+  } //div#mainnav ends here
+} //nav ends here
+
+//for footer
+li.footerBtn{
+  padding: 0 !important;
+  text-align: left;
+  &:third-child{
+    border-bottom: 1px solid; 
+  }
+}
+
+a.footermenu{
+  color: white !important;
+}
+//this is the start of slick carousel
+div.your-class{
+  padding-top: 65px !important;
+  .slick-dotted.slick-slider{
+    margin-bottom: 0 !important;
+  }
+  @each $bgImg, $pic in (pic2: "../../images/uploads/app2.jpg", pic1: "../../images/uploads/telecome1.jpg", pic3:"../../images/uploads/plane.jpg"){
+    div.#{$bgImg}{
+      background:url($pic) no-repeat;
+      @include pic;
+      table{
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        border: none !important;
+        tr{
+          background-color: unset !important;
+          border: none !important;
+          td{
+            vertical-align: middle;
+            border: none !important;
+            text-transform: uppercase;
+            text-align: center;
+            h1{
+              text-transform: uppercase;
+              font-size: 9vw !important;
+              font-weight: bold;
+              color: white !important;
+              letter-spacing: 0.2 !important;
+            }
+            p.contentCarousel{
+              color: white !important;
+              font-weight: bold;
+              letter-spacing: 0.2 !important;
+              font-size: 3vw;
+            }
+            a{
+              float: inherit !important;
+              font-size: 14px !important;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    } //pic ends here
+    .slick-prev{
+      left: 4%;
+      @include arrowHover;
+    }
+    .slick-next{
+      right: 4%;
+      @include arrowHover;
+    }
+  }
+}
+//this is the end of slick carousel
+//this is the start of news wrapper
+  div#newsWrapper{
+    @include pageStyle;
+    padding-top: 0.5em;
+      #DataTables_Table_0_wrapper{
+        padding-bottom: 4em;
+      }
+  }
+//this is the end of news wrapper
+
+//this is start of service wrapper
+div#SWrapper-fluid{
+  background-color: $wColor;
+  box-shadow: $pageShadow;
+  margin: $margin;
+  padding-bottom: 4em;
+  height: 100%;
+  div#firstJ{
+    margin-top: 2em;
+    overflow: hidden; position: relative; background-repeat: no-repeat; background-position: center center; background-size: cover; max-width: 100%; margin-bottom: 0; padding-top: 14em; border-radius:0; 
+  }
+  div#secondJ{
+    border-radius: 0;
+    p{
+        @include contentStyle;
+        width: 100%;
+    }
+  }
+}
+//this is end of service wrapper
+
+//this is start of contact wrapper
+div#CWrapper{
+  @include pageStyle;
+  #mapLayout{
+    padding-top: 0.5em !important;
+  }
+  .jumbotron{
+    position: relative;
+    top: 0%;
+    border-radius: 0px;
+    header{
+      h1{
+      @include jumbotronHeaderStyle;
+      }
+    }
+  } //end of jumbotron
+  p.cM{
+    width: 50%;
+    @include contentStyle;
+  }
+  p.phone{
+    font-size: 2em;
+    font-weight:700;
+    text-decoration: none;
+    transition: 0.2s all linear;
+    text-align: center;
+    margin: 0 auto;
+    width:50%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    &:hover{
+      color: #82B440;
+    }
+  } 
+  div.row{
+    textarea.form-control{
+      resize: vertical;
+    }
+    margin-bottom: 2em;
+  }
+  
+
+    div.or{
+        margin:0 auto;
+        text-align: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        span{
+          h3{
+            width: 5%;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: -3.4rem;
+          }
+        } //end of span
+        hr.hrLine{
+          margin-top:-2.4rem;
+        }
+      } //end of div.or
+    div.col-md-4{
+      .sidebarContact{
+        width: 100%;
+        margin-left: 1%;
+        margin-right: 1%;
+        h3{
+          margin: 0 1% 2% 0;
+          padding: 2% 1% 2% 1%;
+          font-family: $fontFamily;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          line-height: 1;
+          color: white;
+          background-color: $navColor;
+          font-size: 2em;
+        }
+        ul{
+          padding-left: 1%;
+          li{
+            text-align: justify;
+            margin-left: 0;
+            list-style: none;
+            font-size: 1em;
+            float: none;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+          }
+        }
+      }
+    }//end of col-md-4 leftsidebar
+
+    div.jumbotron-fluid.map{
+      margin: 2% 0 0 0;
+      iframe{
+      width: 100%;
+      height: 30em;
+      }
+    }
+ }//end of CWrapper
+//this is end of contact wrapper
+
+//this is the start of career wrapper
+  div#careerWrapper{
+    background-color: $bgColor;
+    margin: $wMargin;
+    box-shadow: $pageShadow;
+    height: 100%;
+    padding-top: 4em;
+    padding-bottom: 4em !important;
+    .jumbotron{
+      background: url('../../images/uploads/career-bg.jpg') no-repeat;
+      background-size: cover;
+      margin-top: 2em;
+      background-blend-mode: overlay; //helps to give the effect of dark image
+      background-color: rgba(0, 0, 0, 0.5) !important;
+      h1{
+        color: white;
+        @include jumbotronHeaderStyle;
+      }
+    }
+    p.cM{
+      @include contentStyle;
+    }
+  }
+//this is the end of career wrapper
+
+a{
+  text-decoration: none;
+  cursor:pointer;
+  &:hover{
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.pageTitle{
+  font-weight: $fontweight;
+}
+
+#map{
+  height: 400px;
+  width: 100%;
+}
+.contact{
+    width: 100%;
+    .contactContent{
+    padding-left: 5%;
+    text-align: justify;
+      span.contact{
+      font-size: 1.5em;
+      padding-left: 5%;
+      }  
+    }
+}
+
+table{
+  td.action, th.action{
+    text-align: center;
+    i.Ceye{
+      color: $eyeColor;
+    }
+  }
+}
+div.fl_left{
+  ul{
+    li{
+        font-size: $smallfonts;
+    }
+  }
+}
+
+@media screen and (max-width: 1135px){
+  nav{
+    div#topbar{
+      width: 90% !important;
+    }
+    div#mainnav{
+      table{
+        width: 90% !important;
+        .nav-pills{
+          li{
+            font-size: 14px !important;
+          }
+        }
+      }
+    }
+  } //nav ends here
+} 
+
+//media screen for responsives of nav
+@media screen and (max-width: 1100px){
+  nav{
+    div#topbar{
+      width: 100% !important;
+      .detail{
+        margin-left: 2% !important;
+      }
+      .social_links{
+        margin-right: 2% !important;
+      }
+    }
+    div#mainnav{
+      table{
+        width: 100% !important;
+        td:first-child{
+          h1.vgpl-brand{
+            margin-left: 2% !important;
+          }
+        }
+        .nav-pills{
+          li{
+            a{
+              font-size: 12px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//media screen for sm devices starts here
+@media screen and (max-width: 991px){
+  //for sm devices
+  body{
+    background-color: rgb(86, 101, 115) !important;
+  }
+  //this is the end of body
+
+  //this is the start of carousel
+    div#SeedsCarousel{
+      padding-top: 2em !important;
+    }
+  //this is the end of carousel
+
+  //this is the start of news/event wrapper
+    div#newsWrapper{
+      padding-top: 6em !important;
+      margin: 0 !important;
+      background-color: $wColor !important;
+    }
+  //this is the end of news/event wrapper
+
+  //this is the start of career wrapper
+    div#careerWrapper{
+      background-color: $bgColor;
+      margin: 0;
+      height: 100%;
+      padding-top: 1em;
+      margin-bottom: 4em;
+    }
+  //this is the end of career wrapper
+
+  //this is start of service wrapper
+  div#SWrapper-fluid{
+    background-color: $wColor;
+    margin: 0 !important;
+    padding-bottom: 4em;
+    div#firstJ{
+      margin-top: 2em;
+      overflow: hidden; position: relative; background-repeat: no-repeat; background-position: center center; background-size: cover; max-width: 100%; margin-bottom: 0; padding-top: 14em; border-radius:0; 
+    }
+    div#secondJ{
+      border-radius: 0;
+      p{
+          @include contentStyle;
+          width: 100%;
+      }
+    }
+  }
+  //this is end of service wrapper
+
+  //this is start of contact wrapper
+  div#CWrapper{
+    background-color: $wColor;
+    margin: 0 !important; 
+    #mapLayout{
+      padding-top: 4em !important;
+    }
+    .jumbotron{
+      position: relative;
+       margin-top: 4% !important;
+      border-radius: 0px;
+      header{
+        h1{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 300;
+        letter-spacing: -1px;
+        font-size: 4em;
+        text-align: center;
+        }
+      }
+    } //end of jumbotron
+    p.cM{
+      width: 50%;
+      @include contentStyle;
+    }
+    p.phone{
+      font-size: 2em;
+      font-weight:700;
+      text-decoration: none;
+      transition: 0.2s all linear;
+      text-align: center;
+      margin: 0 auto;
+      width:50%;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      &:hover{
+        color: #82B440;
+      }
+    } 
+    div.row{
+      textarea.form-control{
+        resize: vertical;
+      }
+      margin-bottom: 2em;
+    }
+    
+
+      div.or{
+          margin:0 auto;
+          text-align: center;
+          padding-top: 1em;
+          padding-bottom: 1em;
+          span{
+            h3{
+              width: 5%;
+              background-color: white;
+              margin: 0 auto;
+              margin-top: -3.4rem;
+            }
+          } //end of span
+          hr.hrLine{
+            margin-top:-2.4rem;
+          }
+        } //end of div.or
+      div.col-md-4{
+        .sidebarContact{
+          width: 100%;
+          margin-left: 1%;
+          margin-right: 1%;
+          h3{
+            margin: 0 1% 2% 0;
+            padding: 2% 1% 2% 1%;
+            font-family: $fontFamily;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1;
+            color: white;
+            background-color: $navColor;
+            font-size: 2em;
+          }
+          ul{
+            padding-left: 1%;
+            li{
+              text-align: justify;
+              margin-left: 0;
+              list-style: none;
+              font-size: 1em;
+              float: none;
+              font-family: 'Source Sans Pro', sans-serif;
+              font-weight: 300;
+              font-size: 18px;
+            }
+          }
+        }
+      }//end of col-md-4 leftsidebar
+
+      div.jumbotron-fluid.map{
+        margin: 2% 0 0 0;
+        iframe{
+        width: 100%;
+        height: 30em;
+        }
+      }
+   }//end of CWrapper
+  //this is end of contact wrapper
+
+  //this is the start of career wrapper
+  div#careerWrapper{
+    background-color: $bgColor !important;
+    position: relative;
+    top: 5em;
+    margin-bottom: 4em;
+  }
+  //this is the end of career wrapper
+
+} //media screen for small devices ends here
+
+@media screen and (max-width: 867px){
+  nav{
+    div#mainnav{
+      table{
+        tr{
+          td:first-child{
+            width: 41% !important;
+          }
+          td:last-child{
+            width: 59% !important;
+            .nav-pills{
+              a{
+                padding: 10px !important;
+              }
+            }
+          }
+        }
+      }
+      
+    }
+  }
+}
+//media screen for xs devices starts here
+@media screen and (max-width: 767px){
+  //this is the end of nav
+  nav{
+    div#topbar{
+    height: 35px !important;
+    table{
+      height: inherit !important;
+    }
+    .detail-xs{
+      text-align: center !important;      
+    }
+    }
+    div#mainnav{
+      table{
+        tr{
+          td#right-menu{
+            text-align: right !important;
+            #togglebtn{
+              background-color: $navColor !important;
+              &::hover{
+                background-color: red !important;
+              }
+            }
+          }
+        }
+       .new-way{
+        a{
+          h1{
+            @include brandstyle;
+          }
+        }
+       }
+      }
+    } //div#mainnav ends here
+  } //nav ends here
+  //this is the end of nav
+
+  //start of career wrapper
+  div#careerWrapper{
+    position: relative;
+    top: 8em;
+  }
+
+  //for news wrapper
+  div#newsWrapper{
+    padding-top: 8em !important;
+  }
+
+  //start of contact wrapper
+  div#CWrapper{
+    padding-top: 3.5em !important;
+    #mapLayout{
+      padding-top: 1em !important; 
+    }
+    .jumbotron-fluid{
+        iframe{
+          width: 100%;
+          height: 250px !important;
+      }
+    }
+    .jumbotron{
+      h1{
+        font-size: 2em !important;
+      }
+    }
+    p.cM{
+      width: 100% !important;
+    }
+    
+    p.phone{
+      width: 100% !important;
+      font-size: 1.5em !important;
+    }
+    .or{
+      h3{
+        font-size: 1em !important;
+        margin-top: -2.8rem !important;
+      }
+    }
+  }
+
+  //start of career wrapper
+  div#careerWrapper{
+    .jumbotron-fluid{
+      padding-top: 8em;
+      width: 100%;
+      text-align: center;
+    }
+  }  
+
+  div.your-class{
+   height: 400px !important;
+   div.pic1, div.pic2, div.pic3{
+    height: 300px !important;
+   }
+  }
+} //media screen for xs device ends here
+
+//makesure-just in case
+  @media screen and (max-width: 428px){
+  
+ nav{
+  div#topbar{
+    height: 35px !important;
+    table{
+      height: inherit !important;
+    }
+    .show-xs{
+      td{
+        text-align: center !important;
+      }
+    }
+  }
+  #mainnav{
+    padding-top: 2em !important;
+  }
+ }
+    //this is for news page
+    div#newsWrapper{
+      padding-top: 10em !important;
+    }
+    div#CWrapper{
+      #mapLayout{
+        padding-top: 3em !important;
+      }
+    }
+  }
+//makesure-jus in case
+
+//media screen lower than 320*770
+  @media screen and (max-width: 320px){
+   //this is for contact page
+  div#CWrapper{
+    #mapLayout{
+      padding-top: 3em !important;
+    }
+  } 
+  }

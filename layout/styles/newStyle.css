@@ -1,0 +1,47 @@
+/*footer ko css*/
+.spacing{
+    padding-left: 1%;
+  }
+  .down-optional{
+    padding: 1%;
+  }
+  .down-optional-2{
+    padding: 0 0 1% 0;
+  }
+  span.inbetween{
+    padding: 0 0 0 2%;
+  }
+  a.footermenu{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  li.footerBtn{
+    padding-left: 0px !important;
+    font-family: "tungsten", "Helvetica Neue", Helvetia, Arial, sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    font-weight: 400;
+    margin: 0.3em auto 0.1em;
+    font-size: 1em;
+  }
+    div#DataTables_Table_0_wrapper {
+    width: 100%;
+    margin: 0;
+}
+
+/*carousel ko css*/
+label.career{
+        text-align: left !important;
+    }
+
+/*nav ko css*/
+/*@media all and (min-width: 1400px){
+  
+}
+@media all and (max-width: 1399px) and (min-width: 1001px){}
+@media all and (max-width: 1000px) and (min-width: 700px) {}
+@media screen and (max-width: 479px) {}*/
